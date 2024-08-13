@@ -1,5 +1,6 @@
 package sample.cafekiosk.unit;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import sample.cafekiosk.unit.beverage.Americano;
@@ -80,17 +81,18 @@ class CafeKioskTest {
     }
 
     // 밤에 테스트 돌리면 실패함
-//    @Test
-//    void createOrder() {
-//        CafeKiosk cafeKiosk = new CafeKiosk();
-//        Americano americano = new Americano();
-//        cafeKiosk.add(americano);
-//
-//        Order order = cafeKiosk.createOrder();
-//
-//        assertThat(order.getBeverages()).hasSize(1);
-//        assertThat(order.getBeverages().get(0).getName()).isEqualTo("아메리카노");
-//    }
+    @Disabled
+    @Test
+    void createOrder() {
+        CafeKiosk cafeKiosk = new CafeKiosk();
+        Americano americano = new Americano();
+        cafeKiosk.add(americano);
+
+        Order order = cafeKiosk.createOrder();
+
+        assertThat(order.getBeverages()).hasSize(1);
+        assertThat(order.getBeverages().get(0).getName()).isEqualTo("아메리카노");
+    }
 
     @Test
     void createOrderWithCurrentTime() {
